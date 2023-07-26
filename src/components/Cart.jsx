@@ -1,11 +1,10 @@
 import React from 'react'
-import { UseSelector } from 'react-redux/es/hooks/useSelector';
 import { useDispatch } from 'react-redux';
+import { UseSelector, useSelector } from 'react-redux/es/hooks/useSelector';
 import { remove } from '../store/cartSlice';
 
 const Cart = () => {
 
-    
     const cartProducts = useSelector(state => state.cart);
     const dispatch = useDispatch();
 
