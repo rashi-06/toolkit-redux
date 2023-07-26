@@ -1,7 +1,12 @@
 import React, {useState , useEffect} from 'react'
 import "../App.css"
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { add } from '../store/cartSlice';
 
 const Products = () => {
+
+    const dispatch = useDispatch();
 
     const [products, setProducts] = useState([]);
 
@@ -13,6 +18,11 @@ const Products = () => {
             console.log(json);
         })
     },[])
+
+    const addToCart = (product) =>{
+        //dispatch add action;
+        dispatch(add(product))
+    }
 
   return (
     <div className='product'>
@@ -34,7 +44,7 @@ const Products = () => {
                 </div>
 
 
-                <button>Add to Cart</button>
+                <button onClick={()=> addToCart(product)}>Add to Cart</button>
             </div>
         ))}
       
