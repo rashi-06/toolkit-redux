@@ -9,7 +9,7 @@ const productSlice = createSlice({
     initialState,
     reducers : {
         add(state , action){
-            state.push(action.payload);
+            state.push(action.payload);//pushing
         },
         remove(state , action){
             return state.filter(item => item.id !== action.payload);
